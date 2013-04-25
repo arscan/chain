@@ -21,14 +21,14 @@ If you are into this kind of thing, check out [HabitRPG](https://habitrpg.com).
 A tentative plan of attack:
 ----
 
-# get environment set up
-# set up  models
-# set up controllers for API access
-# set up views for basic html/json interfaces
-# get testing framework up and running
-# hook up to CI
-# do auth & auth
-# put in client side framework (ember.js? angular.js?)
+* get environment set up
+* set up  models
+* set up controllers for API access
+* set up views for basic html/json interfaces
+* get testing framework up and running
+* hook up to CI
+* do auth & auth
+* put in client side framework (ember.js? angular.js?)
 
 After I do this, hopefully I'll have a better idea of how I want the app to work :)
 
