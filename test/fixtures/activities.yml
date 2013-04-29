@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+   name: MyString
 
 two:
-  name: MyString
+   name: MyString
+
+floss:
+    name: Floss it up!
+

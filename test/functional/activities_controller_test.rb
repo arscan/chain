@@ -3,6 +3,9 @@ require 'test_helper'
 class ActivitiesControllerTest < ActionController::TestCase
   setup do
     @activity = activities(:one)
+    @update = {
+        name: "Lorem Ipsum"
+    }
   end
 
   test "should get index" do
@@ -18,7 +21,7 @@ class ActivitiesControllerTest < ActionController::TestCase
 
   test "should create activity" do
     assert_difference('Activity.count') do
-      post :create, activity: { name: @activity.name }
+      post :create, activity: @update
     end
 
     assert_redirected_to activity_path(assigns(:activity))
@@ -35,7 +38,7 @@ class ActivitiesControllerTest < ActionController::TestCase
   end
 
   test "should update activity" do
-    put :update, id: @activity, activity: { name: @activity.name }
+    put :update, id: @activity, activity: @update
     assert_redirected_to activity_path(assigns(:activity))
   end
 
