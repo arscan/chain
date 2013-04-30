@@ -1,4 +1,0 @@
-test:
-  adapter: postgresql
-  database: chain_test
-  username: postgres
