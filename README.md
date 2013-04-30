@@ -1,7 +1,7 @@
 chain
 =====
 
-My first rails app.  Collaborative Seinfeld-style chaining type game thing.
+My first rails app.  Collaborative Seinfeld-style chaining type game thing. nbd
 
 Some ideas
 ----
