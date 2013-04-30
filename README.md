@@ -1,8 +1,9 @@
 chain
 =====
 
-My first rails app.  Collaborative Seinfeld-style chaining type game thing. nbd
+My first rails app.  Collaborative Seinfeld-style chaining type game thing.
 
+[![Build Status](https://travis-ci.org/arscan/chain.png)](https://travis-ci.org/arscan/chain)
 Some ideas
 ----
 
