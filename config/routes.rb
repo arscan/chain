@@ -1,5 +1,7 @@
 Chain::Application.routes.draw do
-  resources :activities
+  resources :activities do
+      resources :checks
+  end
 
 
   # The priority is based upon order of creation:
