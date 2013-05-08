@@ -16,10 +16,10 @@ describe Activity do
         it "cannot be duplicate" do
 
             activity = create(:activity, name: "blah")
-            activity = create(:activity)
-            activity.name = "blah"
+            activity2 = create(:activity)
+            activity2.name = "blah"
 
-            activity.should_not be_valid
+            activity2.should_not be_valid
 
         end
     end

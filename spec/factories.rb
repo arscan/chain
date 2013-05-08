@@ -15,5 +15,10 @@ FactoryGirl.define do
         datetime Time.now
     end
 
+    factory :user do
+        sequence(:email) {|n| "blah#{n}@blah.com"}
+        password "blahhh"
+    end
+
 end
 
