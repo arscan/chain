@@ -14,7 +14,7 @@ feature "log in" do
 
     end
 
-    scenario "with a valid user" do
+    scenario "with a valid user and log out after" do
         user = create(:user, email: "other@example.com", password: "rous")
         visit root_url
         click_link "Log"
@@ -25,6 +25,9 @@ feature "log in" do
 
         expect(page).to have_text("Welcome")
         expect(page).to have_text("Log Out")
+
+        click_link "Log Out"
+        expect(page).to have_text("Log In")
 
     end
 end
