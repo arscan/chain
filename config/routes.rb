@@ -2,19 +2,21 @@ Chain::Application.routes.draw do
 
   get "home/index"
   get "login", to: "sessions#new", as: "login"
-  get "logout", to: "sessions#destroy", as: "logout"
   get "signup", to: "users#new", as: "signup"
 
   resources :users
   resources :sessions
 
-
-  resources :activities do
-      resources :checks
+  scope :constraints => lambda{|req| !req.session[:user_id].blank? } do
+    # all my logged in routes
+    get "logout", to: "sessions#destroy", as: "logout"
+    resources :activities do
+        resources :checks
+    end
+    root to: "activities#index"
   end
 
   root to: "home#index"
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
