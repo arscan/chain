@@ -18,6 +18,12 @@ FactoryGirl.define do
     factory :user do
         sequence(:email) {|n| "blah#{n}@blah.com"}
         password "blahhh"
+
+        factory :user_with_activity do
+            after(:create) do |user|
+                create(:activity_with_check)
+            end
+        end
     end
 
 end

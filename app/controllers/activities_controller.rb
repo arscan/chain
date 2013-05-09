@@ -2,7 +2,7 @@ class ActivitiesController < ApplicationController
   # GET /activities
   # GET /activities.json
   def index
-    @activities = Activity.all
+    @activities = Activity.where("user_id = ?",current_user)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,9 +15,13 @@ class ActivitiesController < ApplicationController
   def show
     @activity = Activity.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @activity }
+    if @activity.user != current_user
+      redirect_to root_url, now: "You don't have access" 
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @activity }
+      end
     end
   end
 
@@ -41,6 +45,7 @@ class ActivitiesController < ApplicationController
   # POST /activities.json
   def create
     @activity = Activity.new(params[:activity])
+    @activity.user = current_user
 
     respond_to do |format|
       if @activity.save
