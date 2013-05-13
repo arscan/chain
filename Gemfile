@@ -30,7 +30,7 @@ group 'test' do
     gem 'factory_girl_rails'
 end
 
-gem 'rb-readline'
+gem 'rb-readline', '~> 0.4.2'
 
 
 # To use ActiveModel has_secure_password
