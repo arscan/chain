@@ -80,16 +80,5 @@ feature "check off activity" do
         @user = sign_in
     end
 
-    scenario "to see if it works" do
-        activity = create(:activity, user: @user)
-
-        visit root_url
-
-        click_link "Check"
-
-        expect(page).to have_text("UTC")
-
-    end
-
 end
 
